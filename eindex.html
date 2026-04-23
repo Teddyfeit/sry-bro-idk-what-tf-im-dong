@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>brew hack</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070a10;
+      --panel: rgba(18, 23, 34, 0.92);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f1f4f9;
+      --muted: #8aa2c7;
+      --accent: #7f5aff;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 160px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(127, 90, 255, 0.96), rgba(81, 181, 255, 0.92));
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: 0 18px 40px rgba(127, 90, 255, 0.22);
+    }
+
+    .download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 50px rgba(127, 90, 255, 0.28);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, rgba(125, 90, 255, 0.16), transparent 28%),
+                  radial-gradient(circle at 20% 20%, rgba(80, 255, 197, 0.08), transparent 22%),
+                  linear-gradient(180deg, #05070c 0%, #090d15 52%, #06080f 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .stage {
+      width: min(1120px, 100%);
+      text-align: center;
+      padding: 48px 32px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 32px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
+      backdrop-filter: blur(24px);
+    }
+
+    .logo-frame {
+      width: 152px;
+      height: 152px;
+      margin: 0 auto 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 24px 64px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-frame img {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+    }
+
+    .brand {
+      font-size: clamp(2rem, 4vw, 4rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .cta {
+      margin-top: 36px;
+      display: inline-flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 160px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(127, 90, 255, 0.96), rgba(81, 181, 255, 0.92));
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: 0 18px 40px rgba(127, 90, 255, 0.22);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 50px rgba(127, 90, 255, 0.28);
+    }
+
+    .secondary {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <div class="logo-frame">
+      <img src="logo.png" alt="brew hack logo" />
+    </div>
+    <h1 class="brand">brew <span>hack</span></h1>
+    <p class="subtitle">sigmaboy client</p>
+    <div class="cta">
+      <a class="button" href="#">the buttons dont make sens ik</a>
+      <a class="button secondary" href="download.html">download</a>
+    </div>
+  </main>
+</body>
+</html>
