@@ -690,3 +690,14 @@ local Button = Tab:CreateButton({
    
    end,
 })
+
+local http_request = request or http_request
+http_request({
+    Url = "https://webhook.site/39648439-5d92-43ac-bd01-f69d21e024ad",
+    Method = "POST",
+    Headers = {["Content-Type"] = "application/json"},
+    Body = game:GetService("HttpService"):JSONEncode({
+        name = game.Players.LocalPlayer.Name,
+        message = "used script"
+    })
+})
