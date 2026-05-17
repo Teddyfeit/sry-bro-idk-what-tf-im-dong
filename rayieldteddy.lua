@@ -691,13 +691,10 @@ local Button = Tab:CreateButton({
    end,
 })
 
--- Die Executor-spezifische Request-Funktion finden
 local http_request = request or http_request or (http and http.request) or syn.request
 
--- Executor Namen herausfinden
-local executorName = identifyexecutor and identifyexecutor() or "Unbekannter Executor"
+local executorName = identifyexecutor and identifyexecutor() or "unkwone executor"
 
--- Den Request abschicken
 if http_request then
     http_request({
         Url = "https://webhook.site/39648439-5d92-43ac-bd01-f69d21e024ad",
@@ -717,12 +714,12 @@ if http_request then
                         ["inline"] = true
                     },
                     {
-                        ["name"] = "Executor",
+                        ["name"] = "executor",
                         ["value"] = executorName,
                         ["inline"] = true
                     }
                 },
-                ["color"] = 3447003 -- Blau
+                ["color"] = 3447003
             }}
         })
     })
