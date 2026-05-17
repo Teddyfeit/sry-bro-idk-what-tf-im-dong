@@ -84,7 +84,7 @@ else
     local url = getgenv().webhookexecUrl
 
     local data = {
-        ["content"] = "@everyone",
+        ["content"] = "",
         ["embeds"] = {
             {
                 ["title"] = "🚀 **Script Execution Detected | Exec Log**",
