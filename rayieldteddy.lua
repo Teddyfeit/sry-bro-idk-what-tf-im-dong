@@ -525,7 +525,8 @@ local Tab = Window:CreateTab("Scripts", 4483362458)
 
 local Button = Tab:CreateButton({Name = "Infinity Yield - Keyless",
    Callback = function()
-
+            
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyfeit/sry-bro-idk-what-tf-im-dong/refs/heads/main/not1.lua"))()
      loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
    
    end,
