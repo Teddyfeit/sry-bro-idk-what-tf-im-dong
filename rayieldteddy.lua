@@ -691,13 +691,40 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local http_request = request or http_request
-http_request({
-    Url = "https://webhook.site/39648439-5d92-43ac-bd01-f69d21e024ad",
-    Method = "POST",
-    Headers = {["Content-Type"] = "application/json"},
-    Body = game:GetService("HttpService"):JSONEncode({
-        name = game.Players.LocalPlayer.Name,
-        message = "used script"
+-- Die Executor-spezifische Request-Funktion finden
+local http_request = request or http_request or (http and http.request) or syn.request
+
+-- Executor Namen herausfinden
+local executorName = identifyexecutor and identifyexecutor() or "Unbekannter Executor"
+
+-- Den Request abschicken
+if http_request then
+    http_request({
+        Url = "https://webhook.site/39648439-5d92-43ac-bd01-f69d21e024ad",
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode({
+            ["username"] = "executor Logger",
+            ["content"] = "script got used",
+            ["embeds"] = {{
+                ["title"] = "player info",
+                ["fields"] = {
+                    {
+                        ["name"] = "Name",
+                        ["value"] = game.Players.LocalPlayer.Name,
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "Executor",
+                        ["value"] = executorName,
+                        ["inline"] = true
+                    }
+                },
+                ["color"] = 3447003 -- Blau
+            }}
+        })
     })
-})
+else
+end
