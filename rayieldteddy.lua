@@ -523,6 +523,24 @@ Tab:CreateColorPicker({Name = "Tracer Color", Color = Color3.fromRGB(255, 255, 2
 
 local Tab = Window:CreateTab("Scripts", 4483362458)
 
+local Button = Tab:CreateButton({
+   Name = "Bloxstrike NerverLose - Keyless",
+   Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Xranbfg132/NeverLose/refs/heads/main/main1.lua"))()
+
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Dropkick Script - Keyless",
+   Callback = function()
+
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/gsm231/Fe-DropKick/refs/heads/main/V0.1"))()
+
+   end,
+})
+
 local Button = Tab:CreateButton({Name = "Infinity Yield - Keyless",
    Callback = function()
             
@@ -693,4 +711,4 @@ local Button = Tab:CreateButton({
    end,
 })
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyfeit/sry-bro-idk-what-tf-im-dong/refs/heads/main/not.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyfeit/sry-bro-idk-what-tf-im-dong/refs/heads/main/v2not1"))()
