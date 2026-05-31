@@ -1,5 +1,5 @@
 getgenv().whscript = "Teddy Hub V2"
-getgenv().webhookexecUrl = "https://discord.com/api/webhooks/1510570911978360842/eZB1YO2uZ6dBQPZ2WdxQyhIHZRF9XPzqyOJWkILBjo4mJ_gvy2jDQKK2iuZxQxpNlS0s"
+getgenv().webhookexecUrl = "https://discord.com/api/webhooks/1510573572098228327/j_NcoLrQ1pANHaOt8jC8HDUhNm7QqYMIb7xYODmcyg65ViKvAc_rgbgugZ-K7trt78bq"
 getgenv().ExecLogSecret = false
 
 local ui = gethui()
