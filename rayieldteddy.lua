@@ -35,7 +35,7 @@ end
 
 RunService.RenderStepped:Connect(function()
     if not triggerSettings.enabled then return end
-    
+
     -- Check für Hold-Mode
     local canTrigger = true
     if triggerSettings.holdMode then
@@ -212,7 +212,7 @@ local jumpPowerValue = 50
 local function updateJump()
     local char = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
     local hum = char:WaitForChild("Humanoid")
-    hum.UseJumpPower = true 
+    hum.UseJumpPower = true
 
     if jumpEnabled then
         hum.JumpPower = jumpPowerValue
@@ -249,7 +249,7 @@ local function toggleFly(stat)
         -- Wir nutzen eine RenderStepped-Schleife für die Bewegung
         connection = RunService.RenderStepped:Connect(function()
             local direction = Vector3.new(0, 0, 0)
-            
+
             -- Tastatur-Abfrage für Bewegung
             if UserInputService:IsKeyDown(Enum.KeyCode.W) then direction = direction + camera.CFrame.LookVector end
             if UserInputService:IsKeyDown(Enum.KeyCode.S) then direction = direction - camera.CFrame.LookVector end
@@ -259,7 +259,7 @@ local function toggleFly(stat)
             if UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then direction = direction - Vector3.new(0, 1, 0) end
 
             root.Velocity = direction * flySpeed
-            
+
             -- Verhindert, dass der Charakter umfällt
             root.RotVelocity = Vector3.new(0, 0, 0)
         end)
@@ -280,7 +280,7 @@ local walkSpeedValue = 16 -- Standard Roblox Speed
 local function updateSpeed()
     local char = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
     local hum = char:WaitForChild("Humanoid")
-    
+
     if speedEnabled then
         hum.WalkSpeed = walkSpeedValue
     else
@@ -317,24 +317,24 @@ local Window = Rayfield:CreateWindow({
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Big Hub"
+      FileName = "teddy hub"
    },
 
    Discord = {
       Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
       Invite = "https://discord.gg/Q7Suga4GnS", -- The Discord invite code, do not include Discord.gg/. E.g. Discord.gg/ABCD would be ABCD
-      RememberJoins = true -- Set this to false to make them join the Discord every time they load it up
+      RememberJoins = false -- Set this to false to make them join the Discord every time they load it up
    },
 
-   KeySystem = false, -- Set this to true to use our key system
+   KeySystem = true, -- Set this to true to use our key system
    KeySettings = {
       Title = "Key System",
-      Subtitle = "ahmed have dih",
-      Note = "key is selimthegoat", -- Use this to tell the user how to get a key
+      Subtitle = "Very simple key system",
+      Note = "You can get the key at my discord server https://discord.gg/gvUrRfjFYC", -- Use this to tell the user how to get a key
       FileName = "Key", -- It is recommended to use something unique, as other scripts using Rayfield may overwrite your key file
       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"selimthegoat"} 
+      Key = {"yourthegoat"}
    }
 })
 
@@ -427,7 +427,7 @@ Tab:CreateToggle({
    Callback = function(Value) triggerSettings.holdMode = Value end,
 })
 
-local Tab = Window:CreateTab("Movement", 4483362458) 
+local Tab = Window:CreateTab("Movement", 4483362458)
 
 Tab:CreateToggle({
    Name = "Enable Speed Modifier",
@@ -524,6 +524,15 @@ Tab:CreateColorPicker({Name = "Tracer Color", Color = Color3.fromRGB(255, 255, 2
 local Tab = Window:CreateTab("Scripts", 4483362458)
 
 local Button = Tab:CreateButton({
+   Name = "Custom Crosshair GUI",
+   Callback = function()
+
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyfeit/sry-bro-idk-what-tf-im-dong/refs/heads/main/fov.lua"))()
+
+   end,
+})
+
+local Button = Tab:CreateButton({
    Name = "Bloxstrike NerverLose - Keyless",
    Callback = function()
 
@@ -543,17 +552,17 @@ local Button = Tab:CreateButton({
 
 local Button = Tab:CreateButton({Name = "Infinity Yield - Keyless",
    Callback = function()
-            
+
      loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyfeit/sry-bro-idk-what-tf-im-dong/refs/heads/main/not1.lua"))()
      loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-   
+
    end,
 })
 
 local Button = Tab:CreateButton({
    Name = "Soluna Universal - Keyless",
    Callback = function()
-     
+
      loadstring(game:HttpGet("https://raw.githubusercontent.com/EndOverdosing/Soluna-API/refs/heads/main/universal.lua",true))()
 
    end,
@@ -562,10 +571,10 @@ local Button = Tab:CreateButton({
 local Button = Tab:CreateButton({
    Name = "Fe Collection - Keyless",
    Callback = function()
-            
+
      loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyfeit/sry-bro-idk-what-tf-im-dong/refs/heads/main/not2.lua"))()
      loadstring(game:HttpGet("https://raw.githubusercontent.com/sypcerr/FECollection/refs/heads/main/script.lua",true))()
-   
+
    end,
 })
 
@@ -574,7 +583,7 @@ local Button = Tab:CreateButton({
    Callback = function()
 
      loadstring(game:HttpGet("https://raw.githubusercontent.com/kiciahook/kiciahook/refs/heads/main/loader.luau"))()
-   
+
    end,
 })
 
@@ -583,7 +592,7 @@ local Button = Tab:CreateButton({
    Callback = function()
 
      loadstring(game:HttpGet("https://raw.githubusercontent.com/Zylang104/bankroll/main/bankroll.lua"))()
-   
+
    end,
 })
 
@@ -596,7 +605,7 @@ local Button = Tab:CreateButton({
    Callback = function()
 
      loadstring(game:HttpGet("https://raw.githubusercontent.com/bao8jl/solixhub/main/loader"))()
-   
+
    end,
 })
 
@@ -609,7 +618,7 @@ local Button = Tab:CreateButton({
    Callback = function()
 
      loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/2529a5f9dfddd5523ca4e22f21cceffa.lua"))()
-   
+
    end,
 })
 
@@ -627,7 +636,7 @@ local Button = Tab:CreateButton({
      Duration = 2.5,
      Image = "rewind",
 })
-   
+
    end,
 })
 
@@ -643,7 +652,7 @@ local Button = Tab:CreateButton({
      Duration = 2.5,
      Image = "rewind",
 })
-   
+
    end,
 })
 
@@ -659,7 +668,7 @@ local Button = Tab:CreateButton({
      Duration = 2.5,
      Image = "rewind",
 })
-   
+
    end,
 })
 
@@ -675,7 +684,7 @@ local Button = Tab:CreateButton({
      Duration = 2.5,
      Image = "rewind",
 })
-   
+
    end,
 })
 
@@ -691,7 +700,7 @@ local Button = Tab:CreateButton({
      Duration = 2.5,
      Image = "rewind",
 })
-   
+
    end,
 })
 
@@ -707,8 +716,6 @@ local Button = Tab:CreateButton({
      Duration = 2.5,
      Image = "rewind",
 })
-   
+
    end,
 })
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyfeit/sry-bro-idk-what-tf-im-dong/refs/heads/main/v2not1"))()
